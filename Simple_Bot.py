@@ -1,9 +1,11 @@
-from typing import TypeDict, List
-from langchain_core.message import HumanMessage
+from typing import TypedDict, List
+from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, START, END
 from dotenv import load_dotenv
 
-load.env()
+load_dotenv()
+class AgentState(TypedDict):
+    messages: List[HumanMessage]
 
-Class AgentState(TypeDict):
+llm = ChatOpenAI(model="gpt-4o")
